@@ -85,10 +85,8 @@ drawGeohashes = function(){
     tileset.style = new Cesium.Cesium3DTileStyle({
       color : { 
         evaluateColor : function(feature, result) { 
-          console.log(feature.getProperty("id"))
-          let alpha = (["yt", "28", 28].indexOf(feature.getProperty("geohash"))>-1)? 0 : 1;
-          let percent = counts[feature.getProperty("geohash")]/100;
-          return Cesium.Color.fromHsl(Math.floor(Math.random() * 360)/360, 0.5, 0.6, alpha);
+          //let percent = counts[feature.getProperty("geohash")]/100;
+          return Cesium.Color.fromHsl(Math.floor(Math.random() * 360)/360, 0.5, 0.6, 0.6);
     }}})
   }
  
