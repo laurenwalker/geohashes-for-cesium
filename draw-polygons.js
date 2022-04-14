@@ -21,25 +21,25 @@ drawGeohashes = function(){
     polygon = viewer.entities.add({
       polygon : {
         hierarchy : Cesium.Cartesian3.fromDegreesArray([ 
-          bbox[0], bbox[1],
-          bbox[0], bbox[3],  
-          bbox[2], bbox[3],
-          bbox[2], bbox[1] ]),
+          bbox[1], bbox[0],
+            bbox[3], bbox[0],  
+            bbox[3], bbox[2],
+            bbox[1], bbox[2] ]),
         height : 1000,
-        material : Cesium.Color.fromHsl(170/360, .5, .5, .5),
+        material : Cesium.Color.fromHsl(Math.floor(Math.random() * 360)/360, 0.5, 0.6, 0.5),
         outline : true,
         outlineColor : Cesium.Color.WHITE
       }
     });
 
     let label = viewer.entities.add({
-      position : Cesium.Cartesian3.fromDegrees((bbox[2]+bbox[0])/2, (bbox[3]+bbox[1])/2),
+      position : Cesium.Cartesian3.fromDegrees((bbox[3]+bbox[1])/2, (bbox[2]+bbox[0])/2),
       label : {
-          text : count.toString(),
+          text : hash,
           font : '14pt monospace',
           style: Cesium.LabelStyle.FILL,
           outlineWidth : 0,
-          scaleByDistance : new Cesium.NearFarScalar(1.5e2, 2.0, 8.0e6, 1.0)
+          scaleByDistance : new Cesium.NearFarScalar(1.5e2, 5.0, 8.0e6, 0.7)
       }
     });
 

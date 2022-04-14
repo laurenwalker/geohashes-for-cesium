@@ -13,7 +13,7 @@ function start(){// Your access token can be found at: https://cesium.com/ion/to
               count = parseInt(Math.random()*100);
       
           let circle = viewer.entities.add({
-            position : Cesium.Cartesian3.fromDegrees((bbox[2]+bbox[0])/2, (bbox[3]+bbox[1])/2),
+            position : Cesium.Cartesian3.fromDegrees((bbox[3]+bbox[1])/2, (bbox[2]+bbox[0])/2),
             ellipse: {
               semiMinorAxis: count/100 * 350000.0,
               semiMajorAxis: count/100 * 350000.0,
@@ -24,7 +24,7 @@ function start(){// Your access token can be found at: https://cesium.com/ion/to
           });
       
           let label = viewer.entities.add({
-            position : Cesium.Cartesian3.fromDegrees((bbox[2]+bbox[0])/2, (bbox[3]+bbox[1])/2),
+            position : Cesium.Cartesian3.fromDegrees((bbox[3]+bbox[1])/2, (bbox[2]+bbox[0])/2),
             label : {
                 text : count.toString(),
                 font : '14pt monospace',
